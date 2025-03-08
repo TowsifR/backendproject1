@@ -1,0 +1,17 @@
+[project]
+name = "fastapi-project"
+version = "0.0.1"
+description = "Personal FastAPI project with Poetry"
+authors = [
+    {name = "Towsif Rahman",email = "milantowsif77@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi (>=0.115.11,<0.116.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
