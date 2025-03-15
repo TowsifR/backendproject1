@@ -11,4 +11,4 @@ data:
       - job_name: 'prometheus'
         scrape_interval: 5s
         static_configs:
-          - targets: ['prometheus-service.default.svc.cluster.local:9090']
+          - targets: ['http://127.0.0.1:9090/metrics']
