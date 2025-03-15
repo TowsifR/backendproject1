@@ -11,4 +11,4 @@ data:
       - job_name: 'prometheus'
         scrape_interval: 5s
         static_configs:
-          - targets: ['http://prometheus-svc.default.svc.cluster.local:9090/metrics']
+          - targets: ['prometheus-svc.default.svc.cluster.local:9090']
