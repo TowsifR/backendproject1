@@ -17,3 +17,10 @@ spec:
           image: prom/prometheus
           ports:
             - containerPort: 9090
+          volumeMounts:
+            - name: config-volume
+              mountPath: /prometheus
+      volumes:
+        - name: config-volume
+          persistentVolumeClaim:
+            claimName: prometheus-volume
