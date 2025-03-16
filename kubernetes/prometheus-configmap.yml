@@ -12,3 +12,7 @@ data:
         scrape_interval: 5s
         static_configs:
           - targets: ['prometheus-svc.default.svc.cluster.local:9090']
+      - job_name: 'fastapi'
+        scrape_interval: 5s
+        static_configs:
+          - targets: ['fastapi-svc.default.svc.cluster.local:8000']
