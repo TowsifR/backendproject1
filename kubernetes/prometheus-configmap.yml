@@ -15,4 +15,4 @@ data:
       - job_name: 'fastapi'
         scrape_interval: 5s
         static_configs:
-          - targets: ['fastapi-svc.default.svc.cluster.local:8000']
+          - targets: ['fastapi-svc.default.svc.cluster.local:80']
