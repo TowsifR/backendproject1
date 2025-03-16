@@ -1,0 +1,9 @@
+kind: PersistentVolumeClaim
+metadata:
+  name: grafana-volume
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi

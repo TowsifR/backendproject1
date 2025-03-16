@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: prometheus
+  name: prometheus-grafana
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: prometheus
+      app: prometheus-grafana
   template:
     metadata:
       labels:
-        app: prometheus
+        app: prometheus-grafana
     spec:
       containers:
         - name: prometheus
@@ -23,10 +23,20 @@ spec:
             - name: config-volume
               mountPath: /etc/prometheus/prometheus.yml
               subPath: prometheus.yml
+        - name: grafana
+          image: grafana/grafana:latest
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - mountPath: /var/lib/grafana
+              name: grafana-volume
       volumes:
         - name: prometheus-volume
           persistentVolumeClaim:
             claimName: prometheus-volume
+        - name: grafana-volume
+          persistentVolumeClaim:
+            claimName: grafana-volume
         - name: config-volume
           configMap:
             name: prometheus-config
