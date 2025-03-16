@@ -15,5 +15,6 @@ spec:
       containers:
       - name: fastapi
         image: towsif006/backend-repo:fastapi-app
+        imagePullPolicy: Always
         ports:
         - containerPort: 8000
